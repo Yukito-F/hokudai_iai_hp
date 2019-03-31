@@ -28,7 +28,7 @@ p {
     text-align: justify;
 }
 
-/* Header */
+/* ヘッダー */
 .Header {
     display: block;
     background-image: url(../images/background_header.png);
@@ -110,7 +110,7 @@ p {
     }
 }
 
-/* Footer */
+/* フッター */
 .Footer {
     display: block;
     background-color: #f4f4f4;
@@ -193,14 +193,16 @@ p {
     }
 }
 
-/* Main Content Base */
-.Content {
-}
+/* コンテンツ */
+.Content {}
 
-/* 横幅一杯のブロックのスタイル */
-.Content_Box-FullWidth {
-    display: block;
-    margin-bottom: 2rem;
+.Content h1{
+    color: #555;
+    font-family: serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 3rem 0;
 }
 
 /* 余白ありのブロックのスタイル */
@@ -218,28 +220,15 @@ p {
     text-align: justify;
 }
 
-.Content_Heading {
-    color: #555;
-    font-family: serif;
-    font-size: 1.6rem;
-    font-weight: 400;
-    text-align: center;
-    margin: 3rem 0;
-}
-
-.Content_Paragraph-Large {
-    font-family: serif;
-    font-size: 1.1rem;
-    font-weight: 300;
-    line-height: 1.4;
-    color: #555;
-}
-
 .Content_Img-Full {
     width: 100%;
 }
 
 @media all and (min-width: 600px) {
+    .Content h1 {
+        font-size: 1.8rem;
+    }
+    
     .Content_Box-Padding {
         display: flex;
         justify-content: center;
@@ -255,49 +244,37 @@ p {
         flex-wrap: wrap;
     }
 
-    .Content_Heading {
-        font-size: 1.8rem;
-    }
-
-    .Content_Paragraph-Large {
-        font-size: 1.2rem;
-        line-height: 1.6;
-    }
-
     .Content_Img-Full {
         width: 100%;
         
     }
 }
 
-/* Main Home Main */
 
 /* トップのメインイメージのブロックのテキストの配置はFlexboxで調整する */
-.Content_Main {
+.Top {
     display: flex;
     align-items: center;
     width: 100%;
     height: 400px;
     background-color: #fff;
-    background-image: url('../images/Content-Main.jpg');
+    background-image: url('../images/Content-Top.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-bottom: 2rem;
     padding: 2rem;
-}
-
-.Main_Text {
     color: #fff;
 }
 
-.Main_Heading {
+.Top h1 {
     font-size: 1.8rem;
     font-weight: 400;
     line-height: 1.2;
     margin: 0 0 0.3rem;
 }
 
-.Main_Tagline {
+.Top p {
     font-size: 0.75rem;
     margin-bottom: 0;
 }
@@ -305,30 +282,26 @@ p {
 @media all and (min-width: 600px) {
 
     /* 600px以上のメインイメージのブロックの高さや写真の配置位置を上書き */
-    .Content_Main {
+    .Top {
         width: 100%;
         height: 520px;
         background-position: center 40%;
-    }
-    
-    .Main_Text {
         padding-left: 2rem;
-        color: #fff;
     }
 
-    .Main_Heading {
+    .Top h1 {
         font-size: 2.2rem;
         font-weight: 400;
         line-height: 1.2;
     }
 
-    .Main_Tagline {
+    .Top p {
         font-size: 0.9rem;
     }
 }
 
 
-/* Home Main Column */
+/* コラム */
 
 .Content_HomeColumn {
     display: block;
@@ -344,8 +317,10 @@ p {
     font-size: 0.85rem;
     line-height: 1.2;
     border-bottom: 1px solid #000;
+    border-left: 10px solid #000;
     margin-bottom: 3rem;
     padding-bottom: 0.3rem;
+    padding-left: 0.3rem;
 }
 
 .Column_Heading-Normal {
@@ -355,10 +330,6 @@ p {
     font-weight: 400;
     line-height: 1.2;
     margin-bottom: 3rem;
-}
-
-.Column_Paragraph {
-    margin: 0 0 2rem 0;
 }
 
 .Column_Image {
@@ -413,7 +384,24 @@ p {
     }
 }
 
-/* Event Column */
+/* 更新履歴 */
+
+.Description {
+  display: block;
+  width: 100%;
+}
+
+.Description dt {
+  margin-bottom: 0.2rem;
+  padding: 0;
+}
+
+.Description dd {
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+/* イベント */
 .Content_EventColumn {
     display: block;
     margin-bottom: 3rem;
@@ -428,8 +416,10 @@ p {
     font-size: 0.85rem;
     line-height: 1.2;
     border-bottom: 1px solid #000;
+    border-left: 10px solid #000;
     margin-bottom: 1.5rem;
     padding-bottom: 0.3rem;
+    padding-left: 0.3rem;
 }
 
 .Event_Heading-Normal {
@@ -441,22 +431,8 @@ p {
     margin-bottom: 3rem;
 }
 
-.Event_Paragraph {
-    
-}
-
 .Event_Info {
     margin: 0 0 3rem 2rem;
-}
-
-.Event_Image {
-    width: 100%;
-    margin: 0 0 1rem 0;
-}
-
-.Event_Image-Fluid {
-    width: 100%;
-    max-width: 100%;
 }
 
 @media all and (min-width: 600px) {
@@ -491,13 +467,32 @@ p {
     }
 }
 
-/*For Indent*/
+/* 文章のスタイル*/
+.Paragraph {
+    margin: 0 0 2rem 0;
+}
+
+.Paragraph-Large {
+    font-family: serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.4;
+    color: #555;
+}
+
 .Indent {
     text-indent: 1rem;
     margin-bottom: 5rem;
 }
 
-/*Calendar*/
+@media all and (min-width: 600px) {
+    .Paragraph-Large {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+}
+
+/* カレンダー */
 .Calendar {
     ;
     width: 80vw;
